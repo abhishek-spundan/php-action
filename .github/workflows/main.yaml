@@ -24,3 +24,15 @@ jobs:
           pwd
           ls
           php HelloWorld.php
+
+  CFLint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Lint Codebase
+      id: lint
+      uses: csperando/cflint-action@v1
+      with:
+        folder-to-lint: .
