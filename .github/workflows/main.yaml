@@ -40,6 +40,6 @@ jobs:
             folder-to-lint: .
 
         - run: |
-          pwd
-          ls
-          php HelloWorld.cfm
+            pwd
+            ls
+            php HelloWorld.cfm
