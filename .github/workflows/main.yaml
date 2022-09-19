@@ -55,6 +55,19 @@ jobs:
       - run: |
           g++ HelloWorld.cpp && ./a.out
 
+  go:
+    name: Go
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.16.1'
+      - run: |
+         go run ./HelloWorld.go
+
   # cs:
   #   name: C#
   #   runs-on: ubuntu-latest
