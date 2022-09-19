@@ -37,9 +37,4 @@ jobs:
           id: lint
           uses: foundeo/fixinator-github-action@master
           with:
-            folder-to-lint: .
-
-        - run: |
-            pwd
-            ls
-            php HelloWorld.cfm
+            fixinator_api_key: ${{ secrets.FIXINATOR_API_KEY }}
