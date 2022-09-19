@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [amin]
+  pull_request: 
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  php:
+    name: PHP
+    runs_on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Run a one-line script
+        uses: shivmathur/setup-php@v2
+        with:
+          php_version: "8.1"
+      
+      - run: |
+          pwd
+          ls
+          php HelloWorld.php
