@@ -35,7 +35,7 @@ jobs:
 
         - name: Run a one-line script
           id: lint
-          uses: csperando/cflint-action@v1
+          uses: foundeo/fixinator-github-action@master
           with:
             folder-to-lint: .
 
