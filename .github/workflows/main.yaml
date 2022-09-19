@@ -102,7 +102,7 @@ jobs:
       - uses: actions/setup-dotnet@v2
         with:
           dotnet-version: "3.1.x"
-      - run: dotnet build HelloWorld.cs  
+      - run: dotnet HelloWorld.cs  
 
   # cs:
   #   name: C#
