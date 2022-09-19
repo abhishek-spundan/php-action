@@ -19,7 +19,7 @@ jobs:
       - name: Run a one-line script
         uses: shivammathur/setup-php@v2
         with:
-          php_version: "8.1"
+          php-version: "8.1"
       
       - run: |
           pwd
