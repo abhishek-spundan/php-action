@@ -26,42 +26,53 @@ jobs:
           ls
           php HelloWorld.php
 
-  CFLint:
-      name: ColdFusion
-      runs-on: ubuntu-latest
+  js:
+    name: Javascript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: |
+          node HelloWorld.js
 
-      steps:
-        - name: checkout
-          uses: actions/checkout@v3
+  
 
-        - name: Run a one-line script
-          id: lint
-          uses: foundeo/fixinator-github-action@master
-          with:
-            fixinator_api_key: ${{ secrets.FIXINATOR_API_KEY }}
+  # CFLint:
+  #     name: ColdFusion
+  #     runs-on: ubuntu-latest
 
-  publish:
-      runs-on: ubuntu-latest
-      container:
-        image: ghcr.io/foundeo/cfml-ci-tools/cfml-ci-tools:latest
-      steps:
-        - uses: actions/checkout@v2
+  #     steps:
+  #       - name: checkout
+  #         uses: actions/checkout@v3
 
-        - name: Set Version
-          run: |
-            # Strip git ref prefix from version
-            VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-            # Strip "v" prefix from tag name
-            [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-            # Use Docker `latest` tag convention
-            [ "$VERSION" == "master" ] && VERSION=latest
+  #       - name: Run a one-line script
+  #         id: lint
+  #         uses: foundeo/fixinator-github-action@master
+  #         with:
+  #           fixinator_api_key: ${{ secrets.FIXINATOR_API_KEY }}
+
+  # publish:
+  #     runs-on: ubuntu-latest
+  #     container:
+  #       image: ghcr.io/foundeo/cfml-ci-tools/cfml-ci-tools:latest
+  #     steps:
+  #       - uses: actions/checkout@v2
+
+  #       - name: Set Version
+  #         run: |
+  #           # Strip git ref prefix from version
+  #           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+  #           # Strip "v" prefix from tag name
+  #           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+  #           # Use Docker `latest` tag convention
+  #           [ "$VERSION" == "master" ] && VERSION=latest
             
-            echo $VERSION
+  #           echo $VERSION
             
-            box bump version=$VERSION
+  #           box bump version=$VERSION
             
-            cat box.json
+  #           cat box.json
             
-            echo $VERSION > ./version.txt
-          env:
-            BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN: ${{ secrets.BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN }}
+  #           echo $VERSION > ./version.txt
+  #         env:
+  #           BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN: ${{ secrets.BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN }}
