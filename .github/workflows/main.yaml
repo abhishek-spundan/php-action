@@ -95,7 +95,7 @@ jobs:
           perl HelloWorld.pl
 
   cs:
-    name: C#
+    name: C#new
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
