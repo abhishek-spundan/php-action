@@ -26,7 +26,6 @@ jobs:
           php HelloWorld.php
 
   CFLint:
-    coldfusion:
       name: ColdFusion
       runs-on: ubuntu-latest
 
