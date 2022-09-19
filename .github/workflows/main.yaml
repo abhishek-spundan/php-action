@@ -46,6 +46,15 @@ jobs:
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
       - run: python HelloWorld.py
 
+  cpp:
+    name: C++
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # - uses: nicledomaS/cmake_build_action@v1.4
+      - run: |
+          g++ HelloWorld.cpp && ./a.out
+
   # cs:
   #   name: C#
   #   runs-on: ubuntu-latest
