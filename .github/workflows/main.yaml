@@ -79,6 +79,14 @@ jobs:
           java-version: "17"
       - run: java HelloWorld.java
 
+  perl:
+    name: Perl
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          perl HelloWorld.pl
+
   # cs:
   #   name: C#
   #   runs-on: ubuntu-latest
