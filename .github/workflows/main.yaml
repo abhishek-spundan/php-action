@@ -26,13 +26,20 @@ jobs:
           php HelloWorld.php
 
   CFLint:
-    runs-on: ubuntu-latest
+    coldfusion:
+      name: ColdFusion
+      runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v3
+      steps:
+        - name: checkout
+          uses: actions/checkout@v3
 
-    - name: Lint Codebase
-      id: lint
-      uses: csperando/cflint-action@v1
-      with:
-        folder-to-lint: .
+        - name: Run a one-line script
+          uses: csperando/cflint-action@v1
+          with:
+            folder-to-lint: .
+
+        - run: |
+          pwd
+          ls
+          php HelloWorld.cfm
