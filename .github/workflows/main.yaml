@@ -35,16 +35,27 @@ jobs:
       - run: |
           node HelloWorld.js
 
+  # cs:
+  #   name: C#
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: xt0rted/setup-dotnet@v1.0.0
+  #       with:
+  #         dotnet-version: "6.0.201"
+  #     - run: |
+  #         dotnet run HelloWorld.cs  
+
   cs:
     name: C#
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: xt0rted/setup-dotnet@v1.0.0
+      - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "6.0.201"
+          dotnet-version: "5.0.x"
       - run: |
-          dotnet run HelloWorld.cs  
+          dotnet run
 
   # CFLint:
   #     name: ColdFusion
