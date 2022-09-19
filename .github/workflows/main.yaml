@@ -103,7 +103,8 @@ jobs:
         with:
           dotnet-version: "3.1.x"
       - run: |
-          dotnet --project /home/pulse16/Hello-World/HelloWorld.cs  
+          dotnet run 
+      ##--project /home/pulse16/Hello-World/HelloWorld.cs  
 
   # cs:
   #   name: C#
