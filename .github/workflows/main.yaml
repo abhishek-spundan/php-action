@@ -8,6 +8,7 @@ on:
   workflow_dispatch:     
 
 jobs:
+#First Job is for PHP Programming Language..
   php:
     name: PHP
     runs-on: ubuntu-latest
@@ -26,6 +27,7 @@ jobs:
           ls
           php HelloWorld.php
 
+#Second Job is for JavaScript Programming Language..
   js:
     name: Javascript
     runs-on: ubuntu-latest
@@ -35,6 +37,7 @@ jobs:
       - run: |
           node HelloWorld.js
 
+#Third Job is for Python Programming Language..
   python:
     name: Python
     runs-on: ubuntu-latest
@@ -46,6 +49,7 @@ jobs:
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
       - run: python HelloWorld.py
 
+#Forth Job is for C++ Programming Language..
   cpp:
     name: C++
     runs-on: ubuntu-latest
@@ -55,6 +59,7 @@ jobs:
       - run: |
           g++ HelloWorld.cpp && ./a.out
 
+#Fifth Job is for Go Programming Language..
   go:
     name: Go
     runs-on: ubuntu-latest
@@ -68,6 +73,7 @@ jobs:
       - run: |
          go run ./HelloWorld.go
 
+#Sixth Job is for Java Programming Language..
   java:
     name: Java
     runs-on: ubuntu-latest
@@ -79,6 +85,7 @@ jobs:
           java-version: "17"
       - run: java HelloWorld.java
 
+#Seventh Job is for Perl Programming Language..
   perl:
     name: Perl
     runs-on: ubuntu-latest
@@ -87,16 +94,16 @@ jobs:
       - run: |
           perl HelloWorld.pl
 
-  # cs:
-  #   name: C#
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: xt0rted/setup-dotnet@v1.0.0
-  #       with:
-  #         dotnet-version: "6.0.201"
-  #     - run: |
-  #         dotnet run HelloWorld.cs  
+  cs:
+    name: C#
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: xt0rted/setup-dotnet@v1.0.0
+        with:
+          dotnet-version: "6.0.201"
+      - run: |
+          dotnet HelloWorld.cs  
 
   # cs:
   #   name: C#
