@@ -1,11 +1,13 @@
 name: CI
 on: 
   push:
-    branches: [main]
-    tags: - v*
-  pull_request:
-    branches: [main]
-    tags: - v*
+    tags:
+      - v*
+    ##branches: [main]
+    ##tags: - v*
+  ##pull_request:
+    ##branches: [main]
+    ##tags: - v*
   
   workflow_dispatch:     
 
