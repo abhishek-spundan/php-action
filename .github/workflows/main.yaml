@@ -44,7 +44,7 @@ jobs:
         with:
           dotnet-version: "5.0.406"
       - run: |
-          dotnet HelloWorld.cs  
+          dotnet run  
 
   # CFLint:
   #     name: ColdFusion
